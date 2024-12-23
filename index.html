@@ -1,454 +1,304 @@
-<!-- TODO -->
-<!-- margin na tryby na mobile -->
-<!-- zmniejszenie rozmiarow avatara i tekstu w zarzadzie mobile -->
-
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./css/output.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Helix:wght@100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
-</head>
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="opis">
-    <meta name="keywords" content="Minecraft, serwer Minecraft, najlepszy serwer Minecraft, Minecraft, survival, skyblock, minigames">
-    <meta name="author" content="wojtek221">
-    <meta name="robots" content="index, follow">
-
-    <title>Cubepixel.pl</title>
-    <link rel="icon" href="./assets/logo.png" type="image/x-icon">
-
-    <meta property="og:title" content="Cubepixel.pl">
-    <meta property="og:description" content="Lorem ipsum dolor sit amet consectetur. Nunc enim id sagittis ipsum morbi tellus.">
-    <meta property="og:image" content="https://media.discordapp.net/attachments/1239983403726536735/1320202789955178598/logo.png?ex=6768be29&is=67676ca9&hm=8be8e8d29374c959888ff2b3e662c2c8c69aa0e4fe597714b46343ce4bd8ec04&=&format=webp&quality=lossless&width=139&height=92">
-    <meta property="og:url" content="https://cubepixel.pl">
-    <meta property="og:type" content="website">
-
-    <link rel="canonical" href="https://cubepixel.pl">
-</head>
-
-
-<body class="bg-[#100808] text-white bg-cover bg-center sm:bg-contain md:bg-cover lg:bg-cover xl:bg-cover 2xl:bg-cover" style="background-image: url('./assets/bg.png'); max-height: 964px; background-repeat: no-repeat; font-family: 'Helix', sans-serif;">
-
-<!-- navbar -->
-<nav class="relative z-50">
-    <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-5">
-            <a href="#">
-                <img
-                    class="w-[60px] md:w-auto duration-300 hover:scale-[98%] hover:rotate-3"
-                    src="./assets/logo.png"
-                    draggable="false"
-                    alt="Logo"
-                >
-            </a>
-            <div class="hidden md:flex gap-2 items-center font-medium text-lg text-[#707070]">
-                <div class="flex justify-center items-center rounded-full bg-[#62FF0D] border-[2px] border-[#188302]">
-                  <div class="w-[10px] h-[10px] bg-[#62FF0D] rounded-full animate-ping"></div>
-                </div>
-                <span class="text-[#707070]">Graczy:</span>
-                <span class="font-bold text-white" data-playercounter-ip="cubepixel.pl">0</span>
-            </div>
+    <link href="./css/output.css" rel="stylesheet">
+    <link href="./css/global.css" rel="stylesheet">
+    <title>wojtek221</title>
+  
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+</head>      
+<body class="bg-[#09090A] bg-cover bg-center font-mono text-white overflow-x-hidden" style="background-image: url('/src/assets/pattern.png');">
+    <!-- navbar -->
+    <nav id="home" class="flex justify-between items-center w-full max-w-[1265px] h-[50px] mx-auto px-4 mt-3">
+        <div class="text-white justify-start font-semibold text-[20px]">Wojtek221.pl</div>
+    
+        <div class="hidden md:flex w-full h-full justify-end items-center gap-[50px] pt-8 md:pt-0">
+            <a id="home_link" class="duration-300 hover:text-white/80 cursor-pointer">Strona główna</a>
+            <a id="o_mnie_link" class="duration-300 hover:text-white/80 cursor-pointer">O mnie</a>
+            <a id="portfolio_link" class="duration-300 hover:text-white/80 cursor-pointer">Portfolio</a>
+            <a id="Faq_link" class="duration-300 hover:text-white/80 cursor-pointer">Faq</a>
+            <a id="Kontakt_link" class="duration-300 hover:text-white/80 cursor-pointer">Kontakt</a>
         </div>
-
-        <div class="md:hidden">
-            <button id="menu-toggle" class="text-white focus:outline-none">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+    
+        <div class="md:hidden flex items-center">
+            <button class="text-white" id="hamburger-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
-
-        <div id="menu" class="md:flex flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-[#100808]/40 backdrop-blur-[15px] md:bg-transparent md:backdrop-blur-0 shadow-lg md:shadow-none opacity-100 transform translate-y-0 transition-all duration-500 ease-out">
-            <a href="#" class="block px-6 py-3 text-white text-center md:text-left md:py-0 duration-300 hover:text-gray-300 sm:mb-2">Strona główna</a>
-            <a href="#" class="block px-6 py-3 text-white text-center md:text-left md:py-0 duration-300 hover:text-gray-300 sm:mb-2">Zarząd</a>
-            <a href="#" class="block px-6 py-3 text-white text-center md:text-left md:py-0 duration-300 hover:text-gray-300 sm:mb-2">Regulamin</a>
-            <a href="#" class="block px-6 py-3 text-center md:text-left md:py-0 sm:mb-2">
-                <button class="bg-gradient-to-tr w-full from-[#FF2323] to-[#BC2A2A] rounded-full px-8 py-2 duration-300 hover:bg-[#BC2A2A] hover:scale-[98%]">
-                    Sklep
-                </button>
-            </a>
+    </nav>
+    
+    <div class="md:hidden fixed top-0 left-0 w-full h-full bg-black/60 backdrop-blur-[5px] bg-opacity-50 z-50 hidden opacity-0 transform translate-y-4 transition-all duration-500" id="mobile-menu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-white">
+            <button class="absolute top-4 right-4 text-white" id="close-menu-button" onclick="closeMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+    
+            <a id="home_link" class="duration-300 hover:text-white/80" onclick="closeMenu()">Strona główna</a>
+            <a id="o_mnie_link" class="duration-300 hover:text-white/80" onclick="closeMenu()">O mnie</a>
+            <a id="portfolio_link" class="duration-300 hover:text-white/80" onclick="closeMenu()">Portfolio</a>
+            <a id="Faq_link" class="duration-300 hover:text-white/80" onclick="closeMenu()">Faq</a>
+            <a id="Kontakt_link" class="duration-300 hover:text-white/80" onclick="closeMenu()">Kontakt</a>
         </div>
     </div>
-</nav>
+    
 
-<div id="notification" class="hidden absolute w-screen flex items-center justify-center top-[50px]">
-    <div class="fixed mt-0 bg-green-500 text-white py-3 border-[1px] border-[#188302] px-4 rounded font-semibold shadow-lg z-100">
-        IP zostało skopiowane!
-    </div>
-</div>
+    <!-- O mnie -->
+    <div id="o_mnie" class="flex justify-center items-center mt-[150px] px-4">
+        <div class="relative max-w-[1200px] w-full mx-auto">
+            <div class="flex flex-col lg:flex-row items-center lg:justify-between gap-8">
+                <div class="text-left max-w-[550px]">
+                    <h1 class="relative z-10 text-[32px] lg:text-[42px] font-semibold">O mnie</h1>
+                    <span class="relative z-10 text-white/80 block mt-4 text-justify">
+                        Cześć! Nazywam się Wojtek, mam 16 lat i od półtorej roku tworzę responsywne strony. 
+                        Specjalizuję się w HTML5, TailwindCSS, JavaScript oraz nextjs. Podczas tworzenia stron internetowych dbam o każdy szczegół oraz doświadczenia użytkokwników.
+                    </span>
+                    <div class="flex items-center gap-6 mt-8">
+                        <img src="./assets/icons/technologies/html5.png" alt="HTML5" class="w-[30px] h-[30px] duration-300 hover:scale-[97%]" draggable="false">
+                        <img src="./assets/icons/technologies/tailwind.png" alt="tailwind" class="w-[40px] h-[20px] duration-300 hover:scale-[97%]" draggable="false">
+                        <img src="./assets/icons/technologies/css.png" alt="css" class="w-[30px] h-[30px] duration-300 hover:scale-[97%]" draggable="false">
+                        <img src="./assets/icons/technologies/js.png" alt="java script" class="w-[30px] h-[30px] duration-300 hover:scale-[97%]" draggable="false">
+                        <img src="./assets/icons/technologies/nextjs.png" alt="nextjs" class="w-[30px] h-[30px] duration-300 hover:scale-[97%]" draggable="false">
+                        <img src="./assets/icons/technologies/vscode.png" alt="vs code" class="w-[30px] h-[30px] duration-300 hover:scale-[97%]" draggable="false">
+                    </div>
+                </div>
+                
+                <img src="./assets/3d/3d.png" draggable="false" class="absolute z-0 blur-[5px] md:blur-0 md:relative w-[200px] sm:w-[250px] lg:w-[350px] h-auto ml-8 animate-float">
+            </div>
 
-<!-- hero -->
-<div class="w-full p-5 md:p-0">
-    <div class="md:w-[1500px] h-[800px] mx-auto flex justify-between">
-        <div class="flex-col mt-[150px]">
-            <div class="relative space-y-[-15px] z-20">
-                <span class="text-white text-[20px]">Witaj w naszej społeczności</span>
-                <div class="flex text-[65px] mt-3 md:mt-0 md:text-[96px] font-bold">
-                    <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF2323] to-[#920101]">CUBE</h1>
-                    <h1>PIXEL</h1>
+            <div class="mt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- 1 -->
+                <div class="flex flex-col items-start justify-center w-full h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 p-8 duration-300 hover:scale-[101%] shadow-sm">
+                    <div class="text-[20px] flex items-center gap-2">
+                        <img src="./assets/icons/vector.png" draggable="false">
+                        <h2 class="text-[20px] font-semibold">Szybkie wykonanie</h2>
+                    </div>
+                    <span class="mt-3 text-white/80">Wykonamy dla Ciebie gotową stronę internetową w ciągu 7 dni.</span>
+                </div>
+                <!-- 2 -->
+                <div class="flex flex-col items-start justify-center w-full h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 p-8 duration-300 hover:scale-[101%] shadow-sm">
+                    <div class="text-[20px] flex items-center gap-2">
+                        <img src="./assets/icons/cursor.png" draggable="false">
+                        <h2 class="text-[20px] font-semibold">Prosta konfiguracja</h2>
+                    </div>
+                    <span class="mt-3 text-white/80">Treści na stronie możesz zmieniać w prosty i szybki sposób.</span>
+                </div>
+                <!-- 3 -->
+                <div class="flex flex-col items-start justify-center w-full h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 p-8 duration-300 hover:scale-[101%] shadow-sm">
+                    <div class="text-[20px] flex items-center gap-2">
+                        <img src="./assets/icons/precision.png" draggable="false">
+                        <h2 class="text-[20px] font-semibold">Precyzja</h2>
+                    </div>
+                    <span class="mt-3 text-white/80">Każdą stronę wykonujemy z najwyższą jakością i dokładnością.</span>
                 </div>
             </div>
-            <div class="flex gap-[42px] items-center">
-                <a href="#"><button class="bg-gradient-to-tr from-[#FF2323] to-[#BC2A2A] rounded-full px-8 py-2 duration-300 hover:bg-[#BC2A2A] hover:scale-[98%]">Discord</button></a>
-                <button id="ip_copy" class="bg-transparent text-[20px] text-[#707070] flex gap-2 duration-300 hover:scale-[102%]"><img src="./assets/icons/copy.png" draggable="false"> Skopiuj IP</button>
-            </div>
-            <div id="scroll" class="flex items-center gap-2 mt-12 text-[#707070] cursor-pointer max-w-[130px]">
+            <!-- Scroll -->
+            <div id="scroll" class="flex flex-col justify-center items-center text-white/60 cursor-pointer gap-2 mt-8 duration-300 hover:scale-[99%]">
+                <span class="text-center">Zjedź w dół</span>
                 <img src="./assets/icons/arrows.png" draggable="false">
-                <span>Zjedź w dół</span>
-            </div>
-        </div>
-        <img src="./assets/render.png" draggable="false" class="relative scale-[70%] hidden md:flex mt-[-200px] ml-[-50px] z-10 animate-float">
-        <img src="./assets/effect.png" draggable="false" class="relative scale-[90%] hidden md:flex mt-[-200px] ml-[-1270px] z-0">
-    </div>
-</div>
-
-<!-- tryby -->
-<div id="tryby" class="flex flex-col items-center justify-center mt-[-250px] md:mt-0">
-    <div class="text-center mb-4">
-        <h1 class="text-[48px] md:text-[64px] font-bold text-white mb-2">Tryby</h1>
-        <p class="text-[16px] md:text-[20px] text-[#A34747]">Na tych trybach u nas zagrasz</p>
-    </div>
-
-    <div class="hidden md:flex h-[762px] w-full max-w-[1500px] mx-auto space-x-4 p-8 relative">
-        <div class="absolute inset-0 flex justify-center items-center">
-            <div class="w-full h-[30vh] lg:h-[25vh] bg-gradient-to-b from-[#4E0000] to-[#291800] rounded-full blur-[280px]"></div>
-        </div>
-
-        <!-- tryb 1 -->
-            <div class="group relative flex-1 transition-all duration-1000 hover:flex-[2] cursor-pointer rounded-[16px] shadow-sm">
-            <div class="relative h-full w-full rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server1.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover filter grayscale transition-all duration-300 group-hover:grayscale-0"
-                />
-                <div class="absolute inset-0 flex items-end mb-5 justify-center">
-                    <h1 class="text-white text-4xl font-bold duration-300 transform transition-all group-hover:text-5xl">
-                        Tryb 1
-                    </h1>
-                </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-            </div>
-        </div>
-
-        <!-- tryb 2 -->
-        <div class="group relative flex-1 transition-all duration-1000 hover:flex-[2] cursor-pointer rounded-[16px] shadow-sm">
-            <div class="relative h-full w-full rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server2.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover filter grayscale transition-all duration-300 group-hover:grayscale-0"
-                />
-                <div class="absolute inset-0 flex items-end mb-5 justify-center">
-                    <h1 class="text-white text-4xl font-bold duration-300 transform transition-all group-hover:text-5xl">
-                        Tryb 2
-                    </h1>
-                </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-            </div>
-        </div>
-
-        <!-- tryb 3 -->
-        <div class="group relative flex-1 transition-all duration-1000 hover:flex-[2] cursor-pointer rounded-[16px] shadow-sm">
-            <div class="relative h-full w-full rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server3.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover filter grayscale transition-all duration-300 group-hover:grayscale-0"
-                />
-                <div class="absolute inset-0 flex items-end mb-5 justify-center">
-                    <h1 class="text-white text-4xl font-bold duration-300 transform transition-all group-hover:text-5xl">
-                        Tryb 3
-                    </h1>
-                </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
             </div>
         </div>
     </div>
 
-    <!-- mobile -->
-    <div class="flex flex-col md:hidden space-y-6 p-6">
-        <!-- tryb 1 -->
-        <div class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-[425px] h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server1.jpg"
-                    draggable="false"
-                    class="h-full w-[425px] object-cover"
-                />
-                <div class="absolute inset-0 flex items-end mb-4 justify-center">
-                    <h1 class="text-white text-4xl font-bold">Tryb 1</h1>
+    <!-- portfolio -->
+    <div id="portfolio" class="flex justify-center items-center mt-[50px] px-4">
+        <div class="relative max-w-[1200px] w-full mx-auto">
+            <div class="flex flex-col lg:flex-row items-center lg:justify-between gap-8">
+                <div class="text-left max-w-[550px]">
+                    <img src="./assets/3d/3d3.png" draggable="false" class="absolute left-[-100px] top-[-20px] blur-[5px] z-0 w-[200px] sm:w-[250px] lg:w-[300px] h-auto ml-8 animate-float duration-300 hover:scale-[102%]">
+                    <h1 class="relative z-10 text-[32px] lg:text-[42px] font-semibold">Portfolio</h1>
+                    <span class="relative z-10 text-white/80 block mt-4 text-justify">
+                        W moim portfolio znajdziesz projekty, które odzwierciedlają moje umiejętności w tworzeniu nowoczesnych i responsywnych stron internetowych. 
+                    </span>                                       
                 </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
+                <img src="./assets/3d/3d2.png" draggable="false" class="hidden md:flex w-[200px] sm:w-[250px] lg:w-[300px] h-auto ml-8 animate-float duration-300 hover:scale-[102%]">
             </div>
-        </div>
 
-        <!-- tryb 2 -->
-        <div class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-[425px] h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server2.jpg"
-                    draggable="false"
-                    class="h-full w-[425px] object-cover"
-                />
-                <div class="absolute inset-0 flex items-end mb-4 justify-center">
-                    <h1 class="text-white text-4xl font-bold">Tryb 2</h1>
-                </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-            </div>
-        </div>
-
-        <!-- tryb 3 -->
-        <div class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-[425px] h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server3.jpg"
-                    draggable="false"
-                    class="h-full w-[425px] object-cover"
-                />
-                <div class="absolute inset-0 flex items-end mb-4 justify-center">
-                    <h1 class="text-white text-4xl font-bold">Tryb 3</h1>
-                </div>
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- zarzad -->
-<div class="relative flex flex-col items-center justify-center mt-[50px]">
-    <div class="text-center md:block">
-        <h1 class="text-[64px] font-bold text-white mb-2">Zarząd</h1>
-        <p class="text-[20px] text-[#A34747]">Zespół który udoskonala serwer</p>
-    </div>
-
-    <div class="flex flex-wrap justify-center w-full gap-[32px] p-8">
-        <!-- adm1 -->
-        <div class="p-3 md:p-[32px] border-[1px] border-[#FF3737] rounded-[50px] duration-300 hover:scale-[99%] w-full sm:w-[460px] mb-4">
-            <div class="bg-[#1A0E0E] p-[32px] rounded-[50px] h-[160px] flex items-center gap-5">
-                <img class="w-[80px] md:w-[100px] rounded-[15px]" src="https://minotar.net/helm/dixso/100" draggable="false">
-                <div class="flex-col">
-                    <h1 class="text-white text-[24px] font-semibold">Dixso</h1>
-                    <span class="text-[#FF3737] text-[20px]">Właściciel</span>
-                </div>
-            </div>
-        </div>
-    
-        <!-- adm2 -->
-        <div class="p-3 md:p-[32px] border-[1px] border-[#FF3737] rounded-[50px] duration-300 hover:scale-[99%] w-full sm:w-[460px] mb-4">
-            <div class="bg-[#1A0E0E] p-[32px] rounded-[50px] h-[160px] flex items-center gap-5">
-                <img class="w-[80px] md:w-[100px] rounded-[15px]" src="https://minotar.net/helm/vykiel_ek/100" draggable="false">
-                <div class="flex-col">
-                    <h1 class="text-white text-[24px] font-semibold">vykiel_ek</h1>
-                    <span class="text-[#FF3737] text-[20px]">Członek zarządu</span>
-                </div>
-            </div>
-        </div>
-    
-        <!-- adm3 -->
-        <div class="p-3 md:p-[32px] border-[1px] border-[#FF3737] rounded-[50px] duration-300 hover:scale-[99%] w-full sm:w-[460px] mb-4">
-            <div class="bg-[#1A0E0E] p-[32px] rounded-[50px] h-[160px] flex items-center gap-5">
-                <img class="w-[80px] md:w-[100px] rounded-[15px]" src="https://minotar.net/helm/ziomekminecraft/100" draggable="false">
-                <div class="flex-col">
-                    <h1 class="text-white text-[24px] font-semibold">ziomekminecraft</h1>
-                    <span class="text-[#FF3737] text-[20px]">Członek zarządu</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Tiktoki -->
-<div class="flex-col items-center justify-center mt-[50px]">
-    <div class="text-center mb-5">
-        <h1 class="text-[48px] md:text-[64px] font-bold text-white mb-2">Tiktoki</h1>
-        <p class="text-[16px] md:text-[20px] text-[#A34747]">Obejrzyj nasze najnowsze filmiki</p>
-    </div>
-    <div class="flex h-[762px] w-full max-w-[1500px] mx-auto space-x-4 p-8 relative hidden md:flex justify-center items-center">
-        <div class="absolute inset-0 flex justify-center items-center">
-            <div class="w-full h-[50vh] sm:h-[40vh] md:h-[35vh] lg:h-[30vh] xl:h-[25vh] bg-gradient-to-b from-[#4E0000] to-[#291800] rounded-full blur-[280px]"></div>
-        </div>               
-
-        <!-- Tiktok 1 -->
-        <a href="#" class="group relative flex-shrink-0 cursor-pointer rounded-[16px] shadow-sm transition-transform duration-500 hover:scale-110 hover:z-10"
-           onmouseover="shrinkSiblings(this)" onmouseout="resetSiblings(this)">
-            <div class="relative w-[425px] h-[635px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server1.jpg"
-                    draggable="false"
-                    class="w-[425px] h-[635px] object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[128px] h-[128px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png">
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Tiktok 2 -->
-        <a href="#" class="group relative flex-shrink-0 cursor-pointer rounded-[16px] shadow-sm transition-transform duration-500 hover:scale-110 hover:z-10"
-           onmouseover="shrinkSiblings(this)" onmouseout="resetSiblings(this)">
-            <div class="relative h-full w-full rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server2.jpg"
-                    draggable="false"
-                    class="w-[510px] h-[762px] object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[128px] h-[128px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png">
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Tiktok 3 -->
-        <a href="#" class="group relative flex-shrink-0 cursor-pointer rounded-[16px] shadow-sm transition-transform duration-500 hover:scale-110 hover:z-10"
-           onmouseover="shrinkSiblings(this)" onmouseout="resetSiblings(this)">
-            <div class="relative w-[425px] h-[635px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server3.jpg"
-                    draggable="false"
-                    class="w-[425px] h-[635px] object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[128px] h-[128px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png">
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <!-- mobile -->
-    <div class="flex flex-col space-y-6 p-6 md:hidden">
-        <!-- Tiktok 1 -->
-        <a href="#" class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-full h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server1.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[90px] h-[90px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png" alt="Play button">
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Tiktok 2 -->
-        <a href="#" class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-full h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server2.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[90px] h-[90px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png" alt="Play button">
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Tiktok 3 -->
-        <a href="#" class="group relative rounded-[16px] shadow-sm">
-            <div class="relative w-full h-[250px] rounded-[16px] overflow-hidden">
-                <img
-                    src="./assets/tryby/server3.jpg"
-                    draggable="false"
-                    class="h-full w-full object-cover"
-                />
-                <div class="absolute inset-0 rounded-[16px] pointer-events-none border-[1px] border-[#FF0000]"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300">
-                    <div class="bg-[#FF0000] w-[90px] h-[90px] flex justify-center items-center rounded-full duration-300 hover:scale-[102%] shadow-sm">
-                        <img src="./assets/play.png" alt="Play button">
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-
-
-
-<!-- footer -->
-<footer class="bg-[#190E0E] relative w-full min-h-[350px] z-20 mt-[100px] text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-[64px] space-y-[32px]">
-        <div class="flex flex-wrap justify-between items-center gap-8">
-            <div class="flex items-center space-x-8">
-                <img src="./assets/logo.png" alt="CubePixel" class="w-[60px] md:w-auto duration-300 hover:scale-[98%] hover:rotate-3" draggable="false" />
-                <div class="hidden md:flex gap-2 items-center font-medium text-sm sm:text-lg text-[#707070]">
-                    <div class="flex justify-center items-center rounded-full bg-[#62FF0D] border-[2px] border-[#188302]">
-                        <div class="w-[10px] h-[10px] bg-[#62FF0D] rounded-full animate-ping"></div>
-                    </div>
-                    <span class="text-[#707070]">Graczy:</span>
-                    <span class="font-bold text-white" data-playercounter-ip="cubepixel.pl">0</span>
-                </div>
-            </div>
-            <nav class="flex flex-wrap gap-4 items-center text-sm sm:text-base">
-                <a href="#" class="hover:text-gray-300 transition">Strona główna</a>
-                <a href="#" class="hover:text-gray-300 transition">Administracja</a>
-                <a href="#" class="hover:text-gray-300 transition">Regulamin</a>
+            <div class="mt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- 1 -->
                 <a href="#">
-                    <button class="bg-gradient-to-tr from-[#FF2323] to-[#BC2A2A] rounded-full px-6 sm:px-8 py-2 duration-300 hover:bg-[#BC2A2A] hover:scale-[98%]">
-                        Sklep
-                    </button>
+                    <div class="flex flex-col items-center justify-center w-full overflow-hidden h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 duration-300 hover:scale-[101%] shadow-sm relative group">
+                        <img src="./assets/portfolio/img1.png" class="w-full duration-200 hover:scale-[102%]" draggable="false">
+                        <div class="absolute inset-0 bg-black/20 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                                <span class="font-semibold text-[20px]">Etheriamc.pl</span>
+                                <span class="text-white/80 text-[16px]">Kliknij aby dowiedzieć się więcej</span>
+                            </div>
+                        </div>
+                    </div>
                 </a>
-            </nav>
-        </div>
-
-        <div class="flex flex-wrap justify-between items-center gap-8">
-            <p class="text-sm sm:text-base md:text-lg lg:text-[20px] text-[#707070] font-medium leading-relaxed">
-                PL - Server CubePixel.pl nie jest w żaden sposób powiązany z firmą Mojang i Microsoft.<br />
-                EN - CubePixel.pl server is not associated with Mojang or Microsoft in any way.
-            </p>
-            <div class="flex gap-4">
-                <a href="#"><img src="./assets/icons/yt.png" class="duration-300 hover:scale-[105%]" draggable="false"></a>
-                <a href="#"><img src="./assets/icons/tt.png" class="duration-300 hover:scale-[105%]" draggable="false"></a>
-                <a href="#"><img src="./assets/icons/dc.png" class="duration-300 hover:scale-[105%]" draggable="false"></a>
+                <!-- 2 -->
+                <a href="#">
+                    <div class="flex flex-col items-center justify-center w-full overflow-hidden h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 duration-300 hover:scale-[101%] shadow-sm relative group">
+                        <img src="./assets/portfolio/img2.png" class="w-full duration-200 hover:scale-[102%]" draggable="false">
+                        <div class="absolute inset-0 bg-black/20 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                                <span class="font-semibold text-[20px]">Kubovid19.pl</span>
+                                <span class="text-white/80 text-[16px]">Kliknij aby dowiedzieć się więcej</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- 3 -->
+                <a href="#">
+                    <div class="flex flex-col items-center justify-center w-full overflow-hidden h-auto rounded-3xl bg-black/15 backdrop-blur-sm border-[1px] border-white/10 duration-300 hover:scale-[101%] shadow-sm relative group">
+                        <img src="./assets/portfolio/img3.png" class="w-full duration-200 hover:scale-[102%]" draggable="false">
+                        <div class="absolute inset-0 bg-black/20 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-semibold">
+                                <span class="font-semibold text-[20px]">Fresharts.pl</span>
+                                <span class="text-white/80 text-[16px]">Kliknij aby dowiedzieć się więcej</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
 
-        <div class="flex flex-wrap justify-between items-center gap-4">
-            <p class="text-sm sm:text-base md:text-lg lg:text-[20px] text-[#707070]">Copyright 2024 © CubePixel.pl</p>
-            <a href="#" class="flex flex-wrap justify-end text-sm sm:text-base md:text-lg lg:text-[20px] gap-2">
-                <p class="text-[#707070]">Strona stworzona przez: </p>
-                <p class="text-white">Freshagency.pl</p>
-            </a>
+    <!-- Faq -->
+    <div id="faq" class="flex justify-center items-start mt-[100px] px-4">
+        <div class="relative max-w-[1200px] w-full mx-auto border-t-[1px] border-white/30">
+            <div class="flex flex-col lg:flex-row items-start lg:justify-between gap-8 pt-[100px]">
+                <div class="text-left max-w-[550px] lg:sticky top-8">
+                    <h1 class="relative z-10 text-[32px] lg:text-[42px] font-semibold">Faq</h1>
+                    <span class="relative z-10 text-white/80 block mt-4 text-justify">
+                        Znajdziesz tutaj odpowiedzi na najczęściej zadawane pytania dotyczące naszej oferty, cen oraz procesu współpracy.
+                    </span>
+                    <button id="kontakt_btn" class="mt-5 px-5 py-3 border-[1px] border-white/10 bg-transparent text-white rounded-xl duration-300 hover:bg-white/80 hover:text-black">Skontaktuj się</button>
+                </div>
+
+                <div class="relative z-10 max-w-[550px] w-full">
+                    <div class="border-b border-white/20 py-6">
+                        <button class="flex justify-between w-full text-left text-white font-medium text-lg" onclick="toggleFaq(this)">
+                            <span>Jakie usługi oferujecie?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-content overflow-hidden transition-all duration-300 h-0">
+                            <div class="mt-2 text-white/80 max-w-[500px]">
+                                Specjalizujemy się w projektowaniu stron internetowych, front-end development, oraz tworzeniu responsywnych witryn dostosowanych do potrzeb Twojego biznesu.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-b border-white/20 py-6">
+                        <button class="flex justify-between w-full text-left text-white font-medium text-lg" onclick="toggleFaq(this)">
+                            <span>Jaki jest typowy czas realizacji projektu?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-content overflow-hidden transition-all duration-300 h-0">
+                            <div class="mt-2 text-white/80 max-w-[500px]">
+                                W zależności od złożoności projektu realizacja trwa 3 dni do 2 tygodni. Deadline ustalamy po omówieniu projektu.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-b border-white/20 py-6">
+                        <button class="flex justify-between w-full text-left text-white font-medium text-lg" onclick="toggleFaq(this)">
+                            <span>Jakie są koszty realizacji projektu?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-content overflow-hidden transition-all duration-300 h-0">
+                            <div class="mt-2 text-white/80 max-w-[500px]">
+                                Koszty zależą od skali projektu oraz wymagań. Po wstępnej rozmowie przygotowujemy wycenę dostosowaną do Twoich potrzeb.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-b border-white/20 py-6">
+                        <button class="flex justify-between w-full text-left text-white font-medium text-lg" onclick="toggleFaq(this)">
+                            <span>Czy mogę wprowadzać zmiany w trakcie realizacji?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-content overflow-hidden transition-all duration-300 h-0">
+                            <div class="mt-2 text-white/80 max-w-[500px]">
+                                Tak, istnieje możliwość wprowadzania zmian, jednak może to wpłynąć na czas realizacji i koszty. Wszystkie zmiany są wcześniej uzgadniane.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-b border-white/20 py-6">
+                        <button class="flex justify-between w-full text-left text-white font-medium text-lg" onclick="toggleFaq(this)">
+                            <span>Czy oferujecie wsparcie po zakończeniu projektu?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-content overflow-hidden transition-all duration-300 h-0">
+                            <div class="mt-2 text-white/80 max-w-[500px]">
+                                Tak, oferujemy wsparcie techniczne oraz możliwość dalszego rozwoju projektu po zakończeniu jego realizacji.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</footer>
 
-  
-  
-<!-- scripts -->
+
+    <!-- Kontakt -->
+    <div id="kontakt" class="flex justify-center items-center px-4 mt-[100px] mb-[100px]">
+        <div class="relative max-w-[1200px] w-full mx-auto border-t-[1px] border-white/30">
+            <div class="flex flex-col items-center gap-4 pt-[80px] text-center">
+                <div class="text-center max-w-[550px] mb-5">
+                    <h1 class="relative z-10 text-[32px] lg:text-[38px] font-semibold">Kontakt</h1>
+                    <span class="relative z-10 text-white/80 block mt-2">
+                        Skontaktuj się ze mną na Discordzie, aby dowiedzieć się więcej o naszej ofercie i usługach. Chętnie odpowiemy na Twoje pytania!
+                    </span>
+                </div>
+
+                <div class="relative z-10 max-w-[550px] w-full">
+                    <a
+                        href="https://discord.gg/e9jgtejKZx" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-center px-5 py-2.5 bg-[#7289da] text-white font-medium rounded-lg shadow-md hover:bg-[#5b6eae] transition duration-300"
+                    >
+                        <img src="./assets/icons/dc.png" alt="Discord Icon" class="w-5 h-5 mr-2"/>
+                        Skontaktuj się ze mną na Discordzie
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="relative w-screen bg-black/15 backdrop-blur-sm py-8">
+        <div class="max-w-[1265px] mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-start gap-8">
+                <div>
+                    <h2 class="text-white text-lg font-semibold">O mnie</h2>
+                    <p class="text-white/80 mt-2 max-w-[300px]">
+                        Tworzymy strony internetowe z pasją i precyzją, dostarczając rozwiązania, które spełniają Twoje potrzeby.
+                    </p>
+                </div>
+                <div class="mr-5 md:mr-0">
+                    <h2 class="text-white text-lg font-semibold">Linki</h2>
+                    <ul class="mt-2 space-y-2">
+                        <li><span id="home_link2" class="text-white/80 hover:text-white duration-300 cursor-pointer">Strona główna</span></li>
+                        <li><span id="o_mnie_link2" class="text-white/80 hover:text-white duration-300 cursor-pointer">O mnie</span></li>
+                        <li><span id="portfolio_link2" class="text-white/80 hover:text-white duration-300 cursor-pointer">Portfolio</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white text-lg font-semibold">Kontakt</h2>
+                    <ul class="mt-2 space-y-2">
+                        <li class="text-white/80">Discord: wojtus221_</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-4 flex justify-between items-center text-white/60 text-sm">
+                <span>&copy; 2024 wojtek221.pl All rights reserved</span>
+                <a href="#" class="hover:text-white duration-300">Warunki korzystania z usług</a>
+            </div>
+        </div>
+    </footer>
+
+<!-- js -->
 <script src="./js/scroll.js"></script>
-<script src="./js/ipcopy.js"></script>
 <script src="./js/navbar.js"></script>
-<script src="./js/animation.js"></script>
+<script src="./js/faq.js"></script>
 
 </body>
 </html>
